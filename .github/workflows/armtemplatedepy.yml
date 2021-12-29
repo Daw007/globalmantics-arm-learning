@@ -32,7 +32,7 @@ jobs:
           scope: subscription
           subscriptionId: 370fb66b-c3cb-4ee9-83a1-3067f76deca0
           region: West US 
-          template: ./arm-templates/resourcegroup.json
+          template: ./arm-template/resourcegroup.json
           deploymentName: rg-githubactions
 
           
