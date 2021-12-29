@@ -29,7 +29,7 @@ jobs:
       - name: Deploy Resource Group rg-githubactions
         uses: Azure/arm-deploy@v1
         with:
-          scopes: subscription
+          scope: subscription
           subscriptionId: 370fb66b-c3cb-4ee9-83a1-3067f76deca0
           region: West US 
           template: ./arm-templates/resourcegroup.json
