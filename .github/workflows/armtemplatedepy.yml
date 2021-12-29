@@ -11,7 +11,7 @@ on:
 
 env:
   resource_group_name: rg-githubactions
-  location: "West US"
+  location: West US
   subscriptionId: 370fb66b-c3cb-4ee9-83a1-3067f76deca0
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -36,10 +36,10 @@ jobs:
         with:
           scope: subscription
           subscriptionId: ${{ env.subscriptionId }}
-          region: West US
+          region: "${{ env.location }}"
           template: ./arm-template/resourcegroup.json 
           parameters:
-            location=${{ env.location }}
+            location="${{ env.location }}"
             resourceGroupName=${{ env.resource_group_name }}
           deploymentName: ${{ env.resource_group_name }}
 
@@ -66,5 +66,5 @@ jobs:
           template: ./arm-template/virtualmachine.json
           parameters: 
             adminPassword=${{ secrets.UBUNTU_ADMIN_PASSWORD }}
-            location=${{ env.location }}
+            location="${{ env.location }}"
           deploymentMode: incremental
