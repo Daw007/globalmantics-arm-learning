@@ -51,7 +51,14 @@ jobs:
             storageAccountName=storagedawlearing01
             location="West US"
           deploymentMode: incremental
-      
-      - run: echo ${{ steps.storageAccountDeploy.outputs.BlobUri }}
 
-          
+      - name: Deploy Virtual Machine
+        uses: Azure/arm-deploy@v1
+        with:
+          scope: resourcegroup
+          resourceGroupName: rg-githubactions
+          subscriptionId: 370fb66b-c3cb-4ee9-83a1-3067f76deca0
+          template: ./arm-template/virtualmachine.json
+          parameters: 
+            adminPassword="P@$$w0rd.2021"
+          deploymentMode: incremental
