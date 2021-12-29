@@ -5,17 +5,18 @@
         "location": {
             "type": "string",
             "metadata": {
-                "description": "Enter the location to deploy the resource to"
+                "description": "Enter the location to deploy the resources to"
             },
-            "defaultValue": "West US"
+            "defaultValue" : "West US"
         },
         "resourceGroupName": {
             "type": "string",
             "metadata": {
-                "description": "Enter the name for the resource group"
+                "description": "Enter the name of the resource group"
             },
             "defaultValue": "rg-githubactions"
         }
+        
     },
     "functions": [],
     "variables": {},
@@ -23,12 +24,10 @@
         {
             "name": "[parameters('resourceGroupName')]",
             "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2019-10-01",
+            "apiVersion": "2021-05-01",
             "location": "[parameters('location')]",
-            "dependsOn": [
-            ],
-            "tags": {
-            }
+            "dependsOn": [],
+            "tags": {}
         }
     ],
     "outputs": {}
