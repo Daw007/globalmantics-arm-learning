@@ -31,7 +31,8 @@ jobs:
         with:
           scope: subscription
           subscriptionId: 370fb66b-c3cb-4ee9-83a1-3067f76deca0
-          region: West US 
+          region: West US
+          template: ./arm-template/resourcegroup.json 
           parameters:
             location="West US"
             resourceGroupName=rg-githubactions
