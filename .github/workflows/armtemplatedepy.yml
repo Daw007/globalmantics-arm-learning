@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       resource_group_name: rg-prod-githubactions
-      location: West 2 US
+      location: West US 2
     environment:
       name: production
     needs: armDeployStaging
