@@ -44,7 +44,7 @@ jobs:
           template: ./arm-template/storageaccount.json
           parameters: 
             ./arm-template/storageaccount.parameters.json
-            storageAccountName= globaldaw0010
+            storageAccountName=storagedawlearing01
             location="West US"
           deploymentMode: incremental
 
