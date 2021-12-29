@@ -39,8 +39,8 @@ jobs:
           region: West US
           template: ./arm-template/resourcegroup.json 
           parameters:
-            location=${{ env.location }}
-            resourceGroupName=${{ env.resource_group_name }}
+            location="${{ env.location }}"
+            resourceGroupName= ${{ env.resource_group_name }}
           deploymentName: ${{ env.resource_group_name }}
 
       - name: Deploy Storage Account
@@ -54,7 +54,7 @@ jobs:
           parameters: 
             sku=Standard_LRS
             storageAccountName=storagedawlearing01
-            location=${{ env.location }}
+            location="${{ env.location }}"
           deploymentMode: incremental
 
       - name: Deploy Virtual Machine
@@ -66,5 +66,5 @@ jobs:
           template: ./arm-template/virtualmachine.json
           parameters: 
             adminPassword=${{ secrets.UBUNTU_ADMIN_PASSWORD }}
-            location=${{ env.location }}
+            location="${{ env.location }}"
           deploymentMode: incremental
